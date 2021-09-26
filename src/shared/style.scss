@@ -20,8 +20,12 @@ body {
   font-size: 16px;
 }
 
-#root {
+#root{
   margin: 0 auto;
-  background: cyan;
+  background: lightgreen;
+  display: flex;
+  flex-direction: column;
 }
-
+.App{
+  flex: 1
+}
