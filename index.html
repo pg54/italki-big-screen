@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>大屏可视化项目</title>
+  <script>
+    const deviceWidth = document.documentElement.clientWidth;
+    const deviceHight = document.documentElement.clientHeight;
+    let width;
+    if (deviceWidth / deviceHight > 16/9) {
+      width = deviceHight * (16/9)
+    } else {
+      width = deviceWidth
+    }
+    const height = width / (16 / 9)
+
+    const str = `<style>html{
+      font-size: ${width / 100}px
+    }</style>`
+
+    document.write(str);
+
+  </script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  root.style.width = width + 'px';
+  root.style.height = height + 'px';
+  root.style.marginTop = (deviceHight - height) / 2 + 'px';
+</script>
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
